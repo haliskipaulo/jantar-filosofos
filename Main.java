@@ -9,7 +9,7 @@ public class Main {
             garfos[i] = new Semaphore(1);
         }
 
-        Semaphore mutex = new Semaphore(1);
+        //Semaphore mutex = new Semaphore(1);
 
         Filosofo filosofos[] = new Filosofo[numFilosofos];
 
@@ -17,7 +17,8 @@ public class Main {
             Semaphore garfoEsquerdo = garfos[i];
             Semaphore garfoDireito = garfos[(i + 1) % numFilosofos];
 
-            filosofos[i] = new Filosofo(i, garfoEsquerdo, garfoDireito, mutex);
+            //filosofos[i] = new Filosofo(i, garfoEsquerdo, garfoDireito, mutex);
+            filosofos[i] = new Filosofo(i, garfoEsquerdo, garfoDireito);
             filosofos[i].start();
         }
     }
